@@ -1,6 +1,7 @@
 <?php
 //header.inc
-require('func.inc');
+$ASSET_PATH=$_SERVER['DOCUMENT_ROOT']."/assets/php";
+require($ASSET_PATH.'/func.inc');
 ?>
 <!DOCTYPE html>
 <html lang="en">
