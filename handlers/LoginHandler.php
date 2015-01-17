@@ -9,7 +9,7 @@ class LoginHandler
   }
 
   public function post() {
-    //TODO: Handle POST for login/auth and set session var
+  	include("../php/login.inc");
     $workable = new login();
     if($workable->precheckUser($_POST['email'], $_POST['password']))
     	header('Location: /');
