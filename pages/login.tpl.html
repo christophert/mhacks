@@ -1,7 +1,7 @@
 <div class="login-container">
 	<?php if(isset($_GET['regSuccess'])) { ?><div class="successMessage" id="successMessage">Registered Successfully</div><?php } ?>
 	<?php if(isset($_GET['failure'])) { ?><div class="failureMessage" id="failureMessage">Login Failed. Try again.</div><?php } ?>
-	<form class="signin" id="signin" role="form">
+	<form class="signin" id="signin" role="form" method="post">
 		<h1 class="page-heading">Login</h1>
 		<input type="email" class="form-control" placeholder="email@domain.com" name="email" id="email" autofocus="autofocus" required>
 		<input type="password" class="form-control" placeholder="password" name="password" id="password" required>
