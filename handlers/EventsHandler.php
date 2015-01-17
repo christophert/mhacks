@@ -16,6 +16,6 @@ class EventsHandler
     $query = $dbObj->db->prepare("SELECT `name`, `city`, `state`, `start`, `end` FROM `events`");
     $query->execute();
     $response = $query->fetch(PDO::FETCH_ASSOC);
-    echo var_dump($response)
+    die(var_dump($response));
   }
 }
