@@ -4,7 +4,7 @@ $ASSET_PATH = $_SERVER['DOCUMENT_ROOT']."/assets/php";
 require($ASSET_PATH."/header.inc");
 ?>
 	<body>
-		<div class ="strive-header"> <h1> <span style= "font-size:85px">S</span> <span style= "font-size:60px">TRIVE</span></h1>
+		<div class ="strive-header"> <h1> <span style= "font-size:85px">S</span><span style="font-size:60px">TRIVE</span></h1>
 		</div>
   		<div class="login-container">
 			<form class="signin" id="signin" role="form">
