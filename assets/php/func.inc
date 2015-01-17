@@ -10,6 +10,5 @@ class progDB {
 		
 	}
 
-	function connect()
 }
 ?>
