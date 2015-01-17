@@ -6,6 +6,8 @@ require($ASSET_PATH."/header.inc");
   		<div class="login-container">
   		<h1 class="page-heading">
 	<body>
+		<div class ="strive-header"> <h1> STRIVE </h1>
+		</div>
   		<div class="login-container">
 			<form class="signin" id="signin" role="form">
 				<input type="email" class="form-control" placeholder="email@domain.com" name="email" id="email" autofocus="autofocus" required>
@@ -16,14 +18,5 @@ require($ASSET_PATH."/header.inc");
 <?php
 require($ASSET_PATH."/footer.inc");
 ?>
-		<div id="footer">		
-		<div class="container">
-			<small id="commit">Commit <?php echo substr(`git rev-parse --verify HEAD`,0,7); ?></small>
-		</div>
-	</div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</body>
 </html>
