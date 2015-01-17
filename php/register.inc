@@ -54,7 +54,7 @@ class register {
 		$query->bindParam(':name', $name, PDO::PARAM_STR);
 		$query->bindParam(':email', $email, PDO::PARAM_STR);
 		$query->bindParam(':password', $this->create_hash($password, $currentTime), PDO::PARAM_STR);
-		$query->bindParam(':salt', randomSalt());
+		$query->bindParam(':salt', $this->randomSalt());
 		$query->bindParam(':created_dt', $currentTime, PDO::PARAM_INT, 11);
 		return $query->execute();
 	}
