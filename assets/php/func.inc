@@ -1,6 +1,5 @@
 <?php
 //func.inc
-<<<<<<< HEAD
 class progDB {
 	function __construct($connect = true) {
 		$this->results = array();
