@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Strive</title>
-		<link href="assets/css/app.css" type="text/css" />
-	</head>
-	
+<?php
+$page="Home";
+$ASSET_PATH=$_SERVER['DOCUMENT_ROOT']."/assets/php";
+require($ASSET_PATH."/header.inc");
+?>
