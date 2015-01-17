@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Strive</title>
-		<link href="assets/css/app.css" type="text/css" />
+		<link href="assets/css/app.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
 		<div class="login-container">
