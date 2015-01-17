@@ -19,10 +19,10 @@
 	</head>
 	<body>
   		<div class="login-container">
-			<form class="signin" id="signin">
-				<input type="email" name="email" id="email" required>
-				<input type="password" name="password" id="password" required>
-				<input type="submit" class="submit" value="Submit" />
+			<form class="signin" id="signin" role="form">
+				<input type="email" class="form-control" name="email" id="email" autofocus="autofocus" required>
+				<input type="password" class="form-control" name="password" id="password" required>
+				<button class="login-submit" type="submit">Login</button>
 			</form>
 		</div>
 		<div id="footer">		
