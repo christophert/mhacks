@@ -5,7 +5,7 @@ class register {
 		$this->results = array();
 		$this->dbHost = "100.72.88.112";
 		$this->dbPort = 3306;
-		$this->dbName = "strive";
+		$this->dbName = DBNAME;
 		$this->dbUser = DBUSER;
 		$this->dbPass = DBPASS;
 
