@@ -44,7 +44,9 @@ class login {
 	function precheckUser($email, $password) {
 		$var = $this->getUserInfo();
 		if($var != null) {
-			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
+			$dt = new DateTime("@$var['created_dt']");
+			$dt = $dt->format('Y-m-d H:i:s');
+			if($this->validateLogin($password, $var['password'], $dt)) {
 				$_SESSION['name'] = $reponse['name'];
 				$_SESSION['email'] = $response['email'];
 				$_SESSION['userId'] = $response['id'];
