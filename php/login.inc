@@ -42,7 +42,7 @@ class login {
 	}
 
 	function precheckUser($email, $password) {
-		$var = getUserInfo();
+		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
 				$_SESSION['name'] = $reponse['name'];
