@@ -13,9 +13,11 @@ require('../php/func.inc');
 require('../handlers/HomeHandler.php');
 require('../handlers/LoginHandler.php');
 require('../handlers/RegisterHandler.php');
+require('../handlers/EventsHandler.php');
 
 Toro::serve(array(
   '/'            => 'HomeHandler',
   '/login'       => 'LoginHandler',
   '/register'    => 'RegisterHandler',
+  '/events'      => 'EventsHandler',
 ));
