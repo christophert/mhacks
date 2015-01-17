@@ -1,4 +1,5 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT']."../../dbcreds.inc");
 //####################################################################
 // UNCOMMENT BELOW LINE TO PUT STRIVE INTO MAINTENANCE MODE
 //####################################################################
