@@ -8,6 +8,7 @@ require('../vendor/autoload.php');
 
 require('../php/func.php');
 require('../handlers/HomeHandler.php');
+require('../handlers/LoginHandler.php');
 
 Toro::serve(array(
   '/'            => 'HomeHandler',
