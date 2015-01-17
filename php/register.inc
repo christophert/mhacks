@@ -41,8 +41,8 @@ class register {
 	private function create_hash($string, $created_date, $hash_method = 'sha256') {
 	// the salt will be the reverse of the user's created date
 	// in seconds since the epoch
-		$salt = strrev(date('U', strtotime($created_date));
-		if (function_exists('hash') && in_array($hash_method, hash_algos()) {
+		$salt = strrev(date('U', strtotime($created_date)));
+		if (function_exists('hash') && in_array($hash_method, hash_algos())) {
 			return hash($hash_method, $salt.$string);
 		}
 		return sha1($salt.$string);
