@@ -32,7 +32,7 @@ class register {
 		$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()-=_+';
 		$l = strlen($chars) - 1;
 		$str = '';
-		for ($i = 0; $i &lt; $len; ++$i) {
+		for ($i = 0; $i < $len; ++$i) {
 			$str .= $chars[rand(0, $l)];
 		}
 		return $str;
