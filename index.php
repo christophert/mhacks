@@ -6,9 +6,11 @@
 	</head>
 	<body>
 		<div class="login-container">
-			<input type="text" name="email" id="email" required>
-			<input type="password" name="password" id="password" required>
-			<input type="submit" class="submit" value="Submit" />
+			<form class="signin">
+				<input type="text" name="email" id="email" required>
+				<input type="password" name="password" id="password" required>
+				<input type="submit" class="submit" value="Submit" />
+			</form>
 		</div>
 	</body>
 </html>
