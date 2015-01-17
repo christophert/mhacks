@@ -3,8 +3,6 @@ $page="Login";
 $ASSET_PATH = $_SERVER['DOCUMENT_ROOT']."/assets/php";
 require($ASSET_PATH."/header.inc");
 ?>
-  		<div class="login-container">
-  		<h1 class="page-heading">
 	<body>
 		<div class ="strive-header"> <h1> STRIVE </h1>
 		</div>
@@ -18,5 +16,3 @@ require($ASSET_PATH."/header.inc");
 <?php
 require($ASSET_PATH."/footer.inc");
 ?>
-	</body>
-</html>
