@@ -2,12 +2,13 @@
 class dbInit {
   private 
   function __construct($connect = true) {
+    global $DBUSER, $DBPASS;
     $this->results = array();
     $this->dbHost = "100.72.88.112";
     $this->dbPort = 3306;
     $this->dbName = "strive";
-    $this->dbUser = $_ENV['STRIVE_DBUSER'];
-    $this->dbPass = $_ENV['STRIVE_DBPASS'];
+    $this->dbUser = $DBPASS;
+    $this->dbPass = $DBPASS
 
 
     if($connect) {
