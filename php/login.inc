@@ -34,10 +34,10 @@ class login {
 	}
 
 	private function validateLogin($pass, $hashed_pass, $created_date, $hash_method = 'sha256') {
-		$salt = strrev(date('U', strtotime($created_date)));
+		$salt = strrev(date('U', $created_date));
 		if (function_exists('hash') && in_array($hash_method, hash_algos())) {
-			error_log($hashed_pass);
-			error_log(hash($hash_method, $salt . $pass));
+			error_log($hashed_pass, 0);
+			error_log(hash($hash_method, $salt . $pass), 0);
 			return ($hashed_pass === hash($hash_method, $salt . $pass));
 		}
 		return ($hashed_pass === sha1($salt . $pass));
@@ -46,9 +46,7 @@ class login {
 	function precheckUser($email, $password) {
 		$var = $this->getUserInfo();
 		if($var != null) {
-			$dt = new DateTime($var['created_dt']);
-			$dt = $dt->format('Y-m-d H:i:s');
-			if($this->validateLogin($password, $var['password'], $dt)) {
+			if($this->validateLogin($password, $var['password'], $var['created_at'])) {
 				$_SESSION['name'] = $reponse['name'];
 				$_SESSION['email'] = $response['email'];
 				$_SESSION['userId'] = $response['id'];
