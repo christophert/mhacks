@@ -33,7 +33,7 @@ class register {
 		$l = strlen($chars) - 1;
 		$str = '';
 		for ($i = 0; $i &lt; $len; ++$i) {
-			$str .= $chars[rand(0, $l];
+			$str .= $chars[rand(0, $l)];
 		}
 		return $str;
 	}
