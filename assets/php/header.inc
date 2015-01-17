@@ -1,5 +1,6 @@
 <?php
 //header.inc
+require('func.inc');
 ?>
 <!DOCTYPE html>
 <html lang="en">

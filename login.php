@@ -6,8 +6,8 @@ require($ASSET_PATH."/header.inc");
 	<body>
   		<div class="login-container">
 			<form class="signin" id="signin" role="form">
-				<input type="email" class="form-control" name="email" id="email" autofocus="autofocus" required>
-				<input type="password" class="form-control" name="password" id="password" required>
+				<input type="email" class="form-control" placeholder="email@domain.com" name="email" id="email" autofocus="autofocus" required>
+				<input type="password" class="form-control" placeholder="password" name="password" id="password" required>
 				<button class="login-submit" type="submit">Login</button>
 			</form>
 		</div>
