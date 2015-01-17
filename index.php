@@ -19,8 +19,8 @@
 	</head>
 	<body>
   		<div class="login-container">
-			<form class="signin">
-				<input type="text" name="email" id="email" required>
+			<form class="signin" id="signin">
+				<input type="email" name="email" id="email" required>
 				<input type="password" name="password" id="password" required>
 				<input type="submit" class="submit" value="Submit" />
 			</form>
