@@ -56,6 +56,6 @@ class UserInfoHandler
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $trustedDomain = $result['trusted_domain'];
     $emailDomain = substr($_SESSION['email'], strpos($_SESSION['email'], '@')+1);
-    return ($trustedDomain === $emailDomain);
+    return $emailDomain == $trustedDomain;
   }
 }
