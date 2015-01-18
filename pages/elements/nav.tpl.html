@@ -1,0 +1,6 @@
+<div class="header-container">
+	<div class="header">
+		<p class="signInInfo"><?php if(isset($_SESSION['userId'])) { ?> Hello, <?php echo $_SESSION['name']; ?>! (<a href="/logout">Logout</a>) <?php } else { ?> <a href="/login">Login</a><?php } ?></p>
+		<h3 class="brand"><a href="/">Strive</a></h3>
+	</div>
+</div>
