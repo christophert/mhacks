@@ -74,7 +74,7 @@ class login {
 		$result=mysql_query($query);
 		if($result){
 			if(mysql_num_rows($result)==1){
-				echo('Sucess!')
+				echo('Sucess!');
 			}
 		}
 	}
