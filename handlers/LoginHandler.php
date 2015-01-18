@@ -17,7 +17,8 @@ class LoginHandler
     	$_SESSION['userId'] = $response['userId'];
     	$_SESSION['name'] = $response['name'];
     	$_SESSION['email'] = $response['email'];
-    	header('Location: /');
+    	var_dump($response);
+    	header('Location: /?success');
     }
     else
     	header('Location: /login?failure');
