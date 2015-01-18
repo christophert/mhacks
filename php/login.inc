@@ -63,6 +63,7 @@ class login {
 		$query->bindParam(':email',$this->email,PDO::PARAM_STR);
 		$query->execute();
 		$response = $query->fetch(PDO::FETCH_ASSOC);
+		die(var_dump($response));
 		if($response['email']) {
 			return $response;
 		}
