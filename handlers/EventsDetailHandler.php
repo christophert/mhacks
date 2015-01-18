@@ -16,6 +16,9 @@ class EventsDetailHandler
 
   public function post($id) {
     if(isset($_POST['hours']) && is_numeric($_POST['hours'])) {
+      $dbObj = new DatabaseConnection();
+      $db = $dbObj->connect();
+
       $query = $db->prepare("INSERT INTO `entries`(`uid`, `hrs`, `event`) VALUES (:uid, :hrs, :event)");
       $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
       $query->bindParam(':hrs', $_POST['hours'], PDO::PARAM_STR);
