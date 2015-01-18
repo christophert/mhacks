@@ -3,6 +3,9 @@
 require("../../dbcreds.inc");
 require('database.inc');
 
+$dbObj = new DatabaseConnection();
+$db = $dbObj->connect();
+
 // Get all teams
 $teams_query = $db->prepare("SELECT `id`, `name` FROM `teams`");
 $teams_query->execute();
