@@ -35,18 +35,21 @@ class TeamHandler {
 		$query = $db->prepare("SELECT name FROM teams");
 		$query->execute();
 		$result = $query->fetchAll();
+		return $result;
 	}
 
 	private function getHourCompanies($db) {
 		$query = $db->prepare("SELECT hrs FROM teams");
 		$query->execute();
 		$result = $query->fetchAll();
+		return $result;
 	}
 
 	private function getAvgHourCompanies($db) {
 		$query = $db->prepare("SELECT avghrs FROM teams");
 		$query->execute();
 		$result = $query->fetchAll();
+		return $result;
 	}
 }
 ?>
