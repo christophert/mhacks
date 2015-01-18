@@ -27,5 +27,11 @@ class TeamHandler {
 		$query->execute();
 		return $query->fetch(PDO::FETCH_ASSOC);
 	}
+
+	private function getAllCompanyData($db) {
+		$query = $db->prepare("SELECT hrs FROM teams");
+		$query->execute();
+		$result = $query->fetchAll();
+	}
 }
 ?>
