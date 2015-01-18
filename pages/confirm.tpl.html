@@ -1,12 +1,14 @@
 <div class="container">
 	<ul class="list-group">
-		<?php
-		foreach($result as $value) {
-			var_dump($value);
-		?>
-		<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="checkbox" aria-label="<?php echo $value['id']; ?>"/></span></li>
-		<?php
-		}
-		?>
+		<form class="confirm-form" role="form">
+			<?php
+			foreach($result as $value) {
+			?>
+			<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="checkbox" aria-label="<?php echo $value['id']; ?>"/></span></li>
+			<?php
+			}
+			?>
+			<button class="confirm-attend-button" type="submit">Confirm Selected</button>
+		</form>
 	</ul>
 </div>
