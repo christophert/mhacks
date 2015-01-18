@@ -14,10 +14,10 @@ class LoginHandler
     $workable->setId($_POST['email']);
     $response = $workable->precheckUser($_POST['password']);
     if($response['status'] == "OK") {
+    	$response = $response['data'];
     	$_SESSION['userId'] = $response['userId'];
     	$_SESSION['name'] = $response['name'];
     	$_SESSION['email'] = $response['email'];
-    	var_dump($response);
     	header('Location: /?success');
     }
     else
