@@ -26,11 +26,12 @@ class ConfirmHandler {
 				$workable = new DatabaseConnection();
 				$db = $workable->connect();
 				$count = count($attend);
-					for($i=0;$i < $count; $i++) {
-					setConfirm($attend[$i], $event, $db);
+				for($i=0;$i < $count; $i++) {
+					$this->setConfirm($attend[$i], $event, $db);
 				}
 			}
 		}
+		header("Location: /events/".$event);
 	}
 
 	public function getAllRSVP($event, $db) {
