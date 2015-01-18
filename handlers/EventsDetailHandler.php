@@ -2,6 +2,11 @@
 class EventsDetailHandler
 {
   public function get($id) {
+    require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
+    if($usr_priv_level < 0) {
+      header("Location: /login");
+      exit();
+    }
     $page = "Events";
 
     $dbObj = new DatabaseConnection();

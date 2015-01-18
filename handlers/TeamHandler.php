@@ -1,6 +1,11 @@
 <?php
 class TeamHandler {
 	public function get() {
+		require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
+		if($usr_priv_level < 0) {
+			header("Location: /login");
+			exit();
+		}
 		$page = "Your Team";
 		$obj = new DatabaseConnection();
 		$db = $obj->connect();

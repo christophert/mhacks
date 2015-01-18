@@ -2,6 +2,11 @@
 class UserInfoHandler
 {
   public function get() {
+    require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
+    if($usr_priv_level < 0) {
+      header("Location: /login");
+      exit();
+    }
     $page = "User Info";
 
     $dbObj = new DatabaseConnection();
