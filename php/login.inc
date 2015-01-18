@@ -45,6 +45,7 @@ class login {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
+				global $_SESSION;
 				$_SESSION['name'] = $var['name'];
 				$_SESSION['email'] = $var['email'];
 				$_SESSION['userId'] = $var['id'];
