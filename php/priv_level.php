@@ -10,7 +10,7 @@
 		$result = $query->fetch(PDO::FETCH_ASSOC);
 		$db = null;
 		$obj = null;
-		return $result['usr_type'];
+		$usr_priv_level = $result['usr_type'];
 	}
 	else {
 		$db = null;
