@@ -55,10 +55,8 @@ class login {
 			return false;
 	}
 
-
-/*
 	public function getUserInfo() { #return response or null dependent of record exist
-		$query = $this->db->prepare(SELECT * FROM users WHERE email=:email);
+		$query = $this->db->prepare('SELECT * FROM users WHERE email=:email');
 		$query->bindParam(':email',$this->email,PDO::PARAM_STR);
 		$query->execute();
 		$response = $query->fetch(PDO::FETCH_ASSOC);
@@ -68,8 +66,7 @@ class login {
 		else
 			return NULL;
 	}
-*/
-	public function getUserInfo() { #return response or null dependent of record exist
+/*	public function getUserInfo() { #return response or null dependent of record exist
 		$query = "SELECT * FROM users WHERE email='$email'";
 		$result=mysql_query($query);
 		if($result){
@@ -77,6 +74,6 @@ class login {
 				echo('Sucess!');
 			}
 		}
-	}
+	} */
 }
 ?>
