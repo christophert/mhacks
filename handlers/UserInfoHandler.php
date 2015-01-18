@@ -22,6 +22,7 @@ class UserInfoHandler
         $dbObj = new DatabaseConnection();
         $db = $dbObj->connect();
         $this->saveTeam($db, $team);
+        $db = null;
       }
     }
     header('Location: /userinfo');
