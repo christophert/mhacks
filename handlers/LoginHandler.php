@@ -18,7 +18,7 @@ class LoginHandler
     	$_SESSION['name'] = $response['data']['name'];
     	$_SESSION['email'] = $response['data']['email'];
     	session_write_close();
-    	header('Location: /?success');
+    	header('Location: /');
     }
     else
     	header('Location: /login?failure');
