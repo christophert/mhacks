@@ -1,7 +1,7 @@
 <?php
 class TeamHandler {
 	public function get() {
-		$page = "Team"
+		$page = "Team";
 
 	}
 	public function post() {
