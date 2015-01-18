@@ -49,7 +49,7 @@ class register {
 	}
 
 	function registerUser($name, $email, $password, $team) {
-		$query = $this->db->prepare('INSERT INTO users(name, email, password, salt, team, created_dt) VALUES (:name,:email,:password,:salt,:created_dt)');
+		$query = $this->db->prepare('INSERT INTO users(name, email, password, salt, team, created_dt) VALUES (:name,:email,:password,:salt,:team,:created_dt)');
 		$currentTime =  date("Y-m-d H:i:s");
 		$query->bindParam(':name', $name, PDO::PARAM_STR);
 		$query->bindParam(':email', $email, PDO::PARAM_STR);
