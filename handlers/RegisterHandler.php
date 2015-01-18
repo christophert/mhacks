@@ -5,8 +5,8 @@ class RegisterHandler {
 		$obj = new DatabaseConnection();
 		$db = $obj->connect();
 
-		$result = getTeams($db);
-		
+		$result = $this->getTeams($db);
+
 		include("../pages/elements/header.tpl.html");
 		include("../pages/register.tpl.html");
 		include("../pages/elements/footer.tpl.html");
