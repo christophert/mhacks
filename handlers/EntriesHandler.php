@@ -2,6 +2,7 @@
 class EntriesHandler
 {
   public function get() {
+    die(var_dump($_SESSION));
     $page = "Entries";
 
     $dbObj = new DatabaseConnection();
@@ -16,7 +17,6 @@ class EntriesHandler
 
   private function getEntries($db) {
     $query = $db->prepare("SELECT entries.hrs, entries.confirm, events.name FROM `entries` INNER JOIN `events` on entries.event = events.id WHERE `uid`=:uid");
-    echo $_SESSION['userId'];
     $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
