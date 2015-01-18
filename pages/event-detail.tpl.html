@@ -33,6 +33,9 @@
       <p class="list-group-item-text"><?php echo $event['end']; ?></p>
     </a>
   </div>
+    <?php if($usr_priv_level > 0) { ?>
+        <a href="confirm" class="btn btn-lg btn-success">Confirm volunteers</a>
+    <?php } else { ?>
   <form method="POST">
     <div class="input-group">
       <input type="number" class="form-control" placeholder="Amount of hours to dedicate..." name="hours">
@@ -40,5 +43,5 @@
         <button class="btn btn-success" type="submit">Attend</button>
       </div>
     </div>
-  </form>
+  </form> <?php } ?>
 </div>
