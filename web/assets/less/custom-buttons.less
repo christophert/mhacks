@@ -1,20 +1,39 @@
 //custom-buttons.less
-.profile-button {
-	.btn;
-	.btn-default;
+.button-container {
+	.container;
+	margin-bottom: 40px;
 }
 
-.team-button {
-	.btn;
-	.btn-default;
+.button-wrapper {
+	.make-row();
+	margin: 5px;
+	text-align: center;
 }
 
-.new-event-button {
-	.btn;
-	.btn-default;
+.button-col {
+	.make-xs-column(6);
+	.make-md-column(6);
 }
 
-.past-event-button {
-	.btn;
-	.btn-default;
+
+.button-view {
+	.profile-button {
+		.btn;
+		.btn-default;
+	}
+
+	.team-button {
+		.btn;
+		.btn-default;
+	}
+
+	.new-event-button {
+		.btn;
+		.btn-default;
+	}
+
+	.past-event-button {
+		.btn;
+		.btn-default;
+	}
 }
