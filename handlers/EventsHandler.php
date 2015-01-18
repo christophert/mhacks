@@ -1,21 +1,25 @@
 <?php
 class EventsHandler
 {
-  public function get() {
-    $page = "Events";
+  public function get($id) {
+    if(isset($id)) {
+      die("get here");
+    } else {
+      $page = "Events";
 
-    $dbObj = new DatabaseConnection(true);
-    $db = $dbObj->connect();
+      $dbObj = new DatabaseConnection(true);
+      $db = $dbObj->connect();
 
-    $events = $this->getEvents($db);
+      $events = $this->getEvents($db);
 
-    include("../pages/elements/header.tpl.html");
-    include("../pages/events.tpl.html");
-    include("../pages/elements/footer.tpl.html");
+      include("../pages/elements/header.tpl.html");
+      include("../pages/events.tpl.html");
+      include("../pages/elements/footer.tpl.html");
+    }
   }
 
   private function getEvents($db) {
-    $query = $db->prepare("SELECT `name`, `city`, `state`, `start`, `end` FROM `events`");
+    $query = $db->prepare("SELECT `id`, `name`, `city`, `state`, `start`, `end` FROM `events`");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
