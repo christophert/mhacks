@@ -34,6 +34,7 @@ class UserInfoHandler
     $query->bindParam(':tid', $tid, PDO::PARAM_STR);
     $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_INT);
     $query->execute();
+    $_SESSION['team'] = $tid;
   }
 
   private function getTeams($db) {
