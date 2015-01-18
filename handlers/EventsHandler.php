@@ -14,8 +14,12 @@ class EventsHandler
     include("../pages/elements/footer.tpl.html");
   }
 
+  public function get($id) {
+    die("get here");
+  }
+
   private function getEvents($db) {
-    $query = $db->prepare("SELECT `name`, `city`, `state`, `start`, `end` FROM `events`");
+    $query = $db->prepare("SELECT `id`, `name`, `city`, `state`, `start`, `end` FROM `events`");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
