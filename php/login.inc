@@ -45,10 +45,10 @@ class login {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
-				var_dump($response);
-				$_SESSION['name'] = $reponse['name'];
-				$_SESSION['email'] = $response['email'];
-				$_SESSION['userId'] = $response['id'];
+				var_dump($var);
+				$_SESSION['name'] = $var['name'];
+				$_SESSION['email'] = $var['email'];
+				$_SESSION['userId'] = $var['id'];
 				var_dump($_SESSION);
 				die("did it");
 				return true;
@@ -63,7 +63,6 @@ class login {
 		$query->bindParam(':email',$this->email,PDO::PARAM_STR);
 		$query->execute();
 		$response = $query->fetch(PDO::FETCH_ASSOC);
-		die(var_dump($response));
 		if($response['email']) {
 			return $response;
 		}
