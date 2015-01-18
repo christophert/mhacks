@@ -6,7 +6,7 @@ class LeaderboardHandler {
 		$obj = new DatabaseConnection();
 		$db = $obj->connect();
 
-		$leaderboardData = getLeaderboard($db);
+		$leaderboardData = $this->getLeaderboard($db);
 		$db = NULL;
 		include("../pages/elements/header.tpl.html");
 		include("../pages/leaderboard.tpl.html");
