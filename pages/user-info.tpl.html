@@ -12,7 +12,7 @@
           foreach($teams as $team) {
             $extra = "";
             if($team['id'] == $userData['team']) {
-              $extra = " activated"
+              $extra = " activated";
             }
             echo "<option value=\"" . $team['id'] . "\" . $extra . ">" . $team['name'] . "</option>";
           }
