@@ -1,6 +1,6 @@
 <div class="login-container">
-	<?php if(isset($_GET['regSuccess'])) { ?><div class="successMessage" id="successMessage">Registered Successfully</div><?php } ?>
-	<?php if(isset($_GET['failure'])) { ?><div class="failureMessage" id="failureMessage">Login Failed. Try again.</div><?php } ?>
+	<?php if(isset($_GET['regSuccess'])) { ?><div class="successMessage">Registered Successfully</div><?php } ?>
+	<?php if(isset($_GET['failure'])) { ?><div class="failureMessage">Login Failed. Try again.</div><?php } ?>
 	<form class="signin" id="signin" role="form" method="post">
 		<h1 class="page-heading">Login</h1>
 		<input type="email" class="form-control" placeholder="email@domain.com" name="email" id="email" autofocus="autofocus" required>
@@ -8,5 +8,6 @@
 		<?php if(!empty($_GET['redir'])) { ?><input type="hidden" name="redir" value="<?php echo $_GET['redir']; ?>" /> <?php } ?>
 		<button class="login-submit" type="submit">Login</button>
 		<a class="register-button" type="button" href="/register">Register</a>
+		<p><?php echo $_SERVER['REQUEST_URI']; ?></p>
 	</form>
 </div>
