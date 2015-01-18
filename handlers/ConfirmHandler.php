@@ -14,7 +14,7 @@ class ConfirmHandler {
 
 	public function post() {
 		if($_GET['action'] == "update") {	
-			if(setConfirm($_POST['']))
+			//if(setConfirm($_POST['']))
 		}
 	}
 
