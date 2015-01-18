@@ -1,7 +1,7 @@
 <div class="container">
 	<ul class="list-group">
 		<?php
-		foreach($result as &$value) {
+		foreach($result as $value) {
 		?>
 		<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="radio" aria-label="<?php echo $value['id']; ?>/></span></li>
 		<?php
