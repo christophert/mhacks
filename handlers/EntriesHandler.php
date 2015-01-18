@@ -7,7 +7,7 @@ class EntriesHandler
     $dbObj = new DatabaseConnection();
     $db = $dbObj->connect();
 
-    $entries = $this->getEvents($db);
+    $entries = $this->getEntries($db);
 
     include("../pages/elements/header.tpl.html");
     include("../pages/entries.tpl.html");
