@@ -48,8 +48,6 @@ class login {
 				$_SESSION['name'] = $var['name'];
 				$_SESSION['email'] = $var['email'];
 				$_SESSION['userId'] = $var['id'];
-				var_dump($_SESSION);
-				die("did it");
 				return true;
 			}
 		}
