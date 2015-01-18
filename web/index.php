@@ -21,8 +21,9 @@ require('../handlers/EntriesHandler.php');
 require('../handlers/LogoutHandler.php');
 require('../handlers/UserInfoHandler.php');
 require('../handlers/ConfirmHandler.php');
-require('../handlers/NewEventHandler.php');
+require('../handlers/CreateEventHandler.php');
 require('../handlers/LeaderboardHandler.php');
+require('../handlers/TeamHandler.php');
 
 Toro::serve(array(
   '/'               => 'HomeHandler',
@@ -30,10 +31,11 @@ Toro::serve(array(
   '/register'       => 'RegisterHandler',
   '/events/:number' => 'EventsDetailHandler',
   '/events/:number/confirm' => 'ConfirmHandler',
-  '/events/new'		=>	'NewEventHandler',
+  '/events/create'		=>	'CreateEventHandler',
   '/events'         => 'EventsHandler',
   '/entries'        => 'EntriesHandler',
   '/logout'		     	=> 'LogoutHandler',
   '/userinfo'		  	=> 'UserInfoHandler',
   '/team/leaderboard'	=>	'LeaderboardHandler',
+  '/team'				=>	'TeamHandler',
 ));
