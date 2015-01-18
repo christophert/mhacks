@@ -6,7 +6,7 @@ class EventsHandler
 
     $dbObj = new DatabaseConnection(true);
     $db = $dbObj->connect();
-    $this->getEvents($db)
+    $this->getEvents($db);
 
     include("../pages/elements/header.tpl.html");
     include("../pages/events.tpl.html");
