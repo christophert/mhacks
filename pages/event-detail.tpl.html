@@ -34,7 +34,7 @@
     </a>
   </div>
     <?php if($usr_priv_level > 0) { ?>
-        <a href="confirm" class="detail-confirm-button">Confirm volunteers</a>
+        <a href="<?php echo $homeid; ?>/confirm" class="detail-confirm-button">Confirm volunteers</a>
     <?php } else { ?>
   <form method="POST">
     <div class="input-group">

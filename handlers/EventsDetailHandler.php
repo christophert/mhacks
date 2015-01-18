@@ -13,6 +13,7 @@ class EventsDetailHandler
     $db = $dbObj->connect();
 
     $event = $this->getEvent($db, $id);
+    $homeid = $id;
 
     include("../pages/elements/header.tpl.html");
     include("../pages/event-detail.tpl.html");
