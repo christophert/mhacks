@@ -7,7 +7,7 @@ class LogoutHandler {
 		unset($_SESSION['userId']);
 		unset($_SESSION['name']);
 		unset($_SESSION['email']);
-		header("location: index.php");
+		header("location: /");
 	}
 }
 ?>
