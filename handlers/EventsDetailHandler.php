@@ -29,6 +29,10 @@ class EventsDetailHandler
       $query->bindParam(':hrs', $_POST['hours'], PDO::PARAM_STR);
       $query->bindParam(':event', $id, PDO::PARAM_STR);
       $query->execute();
+      $query = $db->prepare("INSERT INTO rsvp(uid, event) VALUES (:uid, :event)");
+      $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
+      $query->bindParam(':event', $id, PDO::PARAM_STR);
+      $query->execute();
     }
     header('Location: /entries');
   }
