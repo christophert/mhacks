@@ -7,9 +7,9 @@ class ConfirmHandler {
 		$query = $db->prepare("SELECT u.id,u.name FROM users AS u INNER JOIN rsvp AS rs on u.id=rs.uid");
 		$query->execute();
 		$result = $query->fetch(PDO::FETCH_ASSOC);
-		include("../pages/header.tpl.html");
+		include("../pages/elements/header.tpl.html");
 		include("../pages/confirm.tpl.html");
-		include("../pages/footer.tpl.html");
+		include("../pages/elements/footer.tpl.html");
 	}
 
 	public function post() {
