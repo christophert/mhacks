@@ -5,12 +5,15 @@
       <p class="list-group-item-text"><?php echo $_SESSION['name']; ?></p>
     </a>
     <a class="list-group-item">
-      <h4 class="list-group-item-heading">Email Address (<?php echo $teamStatus; ?>)</h4>
+      <h4 class="list-group-item-heading">Email Address</h4>
       <p class="list-group-item-text"><?php echo $_SESSION['email']; ?></p>
     <a class="list-group-item">
       <h4 class="list-group-item-heading">Hours Volunteered</h4>
       <p class="list-group-item-text"><?php echo $userData['total_hrs']; ?></p>
     </a>
+    <a class="list-group-item">
+      <h4 class="list-group-item-heading">Current Team Status</h4>
+      <p class="list-group-item-text"><?php if($teamStatus) { ?> Verified <?php } else { ?> Not Verified <?php } ?></p>
     <a class="list-group-item">
       <h4 class="list-group-item-heading">Team</h4>
       <form method="POST">
