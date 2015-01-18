@@ -1,7 +1,6 @@
 <?php
 class LogoutHandler {
 	public function get() {
-		global $_SESSION;
 		include($_SERVER['DOCUMENT_ROOT']."/../php/authcheck.php");
 		
 		session_start();
