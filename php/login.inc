@@ -45,10 +45,11 @@ class login {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
-				die("did it");
 				$_SESSION['name'] = $reponse['name'];
 				$_SESSION['email'] = $response['email'];
 				$_SESSION['userId'] = $response['id'];
+				var_dump($_SESSION);
+				die("did it");
 				return true;
 			}
 		}
