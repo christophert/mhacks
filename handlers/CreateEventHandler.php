@@ -26,7 +26,7 @@ class CreateEventHandler {
 	}
 
 	public function registerEvent($name, $addr, $city, $state, $zip, $start, $end, $db) {
-		$query = $db->prepare("INSERT INTO events(name, addr, city, state, zip, start, end, descr) VALUES (:name,:addr,:city,:state,:zip,:start,:end,:descr)");
+		$query = $db->prepare("INSERT INTO events(name, addr, city, state, zip, start, end) VALUES (:name,:addr,:city,:state,:zip,:start,:end)");
 		$query->bindParam(":name", $name, PDO::PARAM_STR);
 		$query->bindParam(":addr", $addr, PDO::PARAM_STR);
 		$query->bindParam(":city", $city, PDO::PARAM_STR);
