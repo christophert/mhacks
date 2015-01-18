@@ -41,19 +41,25 @@ class login {
 		return ($hashed_pass === sha1($salt . $pass));
 	}
 
-	function precheckUser($email, $password) {
+	function precheckUser($password) {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
-				die("did it");
-				$_SESSION['name'] = $reponse['name'];
-				$_SESSION['email'] = $response['email'];
-				$_SESSION['userId'] = $response['id'];
-				return true;
+				$response = array();
+				$response['status'] = "OK";
+				$response['data'] = array(
+					"name" => $var['name'],
+					"email" => $var['email'],
+					"userId" => $var['id']
+				);
+				return $response;
 			}
 		}
 		else
-			return false;
+			return $response = array(
+				"status" => "NOTFOUND",
+				"data" => array()
+				);
 	}
 
 	public function getUserInfo() { #return response or null dependent of record exist

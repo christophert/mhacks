@@ -12,8 +12,13 @@ class LoginHandler
   	include("../php/login.inc");
     $workable = new login();
     $workable->setId($_POST['email']);
-    if($workable->precheckUser($_POST['email'], $_POST['password']))
-    	header('Location: /');
+    $response = $workable->precheckUser($_POST['password']);
+    if($response['status'] == "OK") {
+    	$_SESSION['userId'] = $response['data']['userId'];
+    	$_SESSION['name'] = $response['data']['name'];
+    	$_SESSION['email'] = $response['data']['email'];
+    	header('Location: /?success');
+    }
     else
     	header('Location: /login?failure');
   }
