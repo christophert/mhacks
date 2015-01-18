@@ -7,6 +7,8 @@ class RegisterHandler {
 
 		$result = $this->getTeams($db);
 
+		$db = null;
+
 		include("../pages/elements/header.tpl.html");
 		include("../pages/register.tpl.html");
 		include("../pages/elements/footer.tpl.html");
@@ -17,6 +19,7 @@ class RegisterHandler {
 		//TODO: register
 		$workable = new register();
 		$result = $workable->registerUser($_POST['fname']." ".$_POST['lname'], $_POST['email'], $_POST['password']);
+		$workable = null;
 		if($result)
 			header('Location: /login?regSuccess');
 		else

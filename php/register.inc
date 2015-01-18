@@ -48,13 +48,14 @@ class register {
 		return sha1($salt.$string);
 	}
 
-	function registerUser($name, $email, $password) {
-		$query = $this->db->prepare('INSERT INTO users(name, email, password, salt, created_dt) VALUES (:name,:email,:password,:salt,:created_dt)');
+	function registerUser($name, $email, $password, $team) {
+		$query = $this->db->prepare('INSERT INTO users(name, email, password, salt, team, created_dt) VALUES (:name,:email,:password,:salt,:created_dt)');
 		$currentTime =  date("Y-m-d H:i:s");
 		$query->bindParam(':name', $name, PDO::PARAM_STR);
 		$query->bindParam(':email', $email, PDO::PARAM_STR);
 		$query->bindParam(':password', $this->create_hash($password, $currentTime), PDO::PARAM_STR);
 		$query->bindParam(':salt', $this->randomSalt());
+		$query->bindParam(':team', $team, PDO::PARAM_INT, 10);
 		$query->bindParam(':created_dt', strtotime($currentTime), PDO::PARAM_INT, 11);
 		return $query->execute();
 	}
