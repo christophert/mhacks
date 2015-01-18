@@ -1,7 +1,7 @@
 <?php
 
 require($_SERVER['DOCUMENT_ROOT']."/../../dbcreds.inc");
-require('../php/database.inc');
+require('database.inc');
 
 // Get all teams
 $teams_query = $db->prepare("SELECT `id`, `name` FROM `teams`");
