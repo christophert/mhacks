@@ -7,7 +7,7 @@ class EventsHandler
     } else {
       $page = "Events";
 
-      $dbObj = new DatabaseConnection(true);
+      $dbObj = new DatabaseConnection();
       $db = $dbObj->connect();
 
       $events = $this->getEvents($db);
