@@ -12,7 +12,7 @@
     <tbody>
       <?php foreach($events as $event): ?>
       <tr>
-        <td><?php echo $event['name'] ?></td>
+        <td><a href="/events/"<?php echo $event['id']; ?><?php echo $event['name'] ?></a></td>
         <td><?php echo $event['city'] ?></td>
         <td><?php echo $event['state'] ?></td>
         <td><?php echo $event['start'] ?></td>

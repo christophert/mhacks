@@ -1,5 +1,5 @@
 <?php
-class EventsHandler
+class EventsDetailHandler
 {
   public function get($id) {
     $page = "Events";
