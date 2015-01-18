@@ -30,7 +30,7 @@ class UserInfoHandler
   private function saveTeam($db, $tid) {
     $query = $db->prepare("UPDATE `users` SET `team`=:tid WHERE `id`=:id");
     $query->bindParam(':tid', $tid, PDO::PARAM_STR);
-    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_STR);
+    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_INT);
     $query->execute();
   }
 
@@ -41,8 +41,8 @@ class UserInfoHandler
   }
 
   private function getUserData($db) {
-    $query = $db->prepare("SELECT `total_hrs`, `team` FROM `users` WHERE `id`=:id");
-    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_STR);
+    $query = $db->prepare("SELECT `name`, `email`, `total_hrs`, `team` FROM `users` WHERE `id`=:id");
+    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_INT);
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);
   }

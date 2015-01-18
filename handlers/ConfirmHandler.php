@@ -2,6 +2,7 @@
 
 class ConfirmHandler {
 	public function get($event) {
+		//1+ priv level
 		require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
 		if($usr_priv_level < 1) {
 			header("Location: /nocando");
