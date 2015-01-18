@@ -11,6 +11,8 @@ class TeamHandler {
 		$db = $obj->connect();
 
 		$companyInfo = $this->getCompanyInfo($db);
+		$allCompanies = $this->getAllCompanyData($db);
+		
 		$db = NULL;
 		include('../pages/elements/header.tpl.html');
 		include('../pages/team.tpl.html');
@@ -29,7 +31,7 @@ class TeamHandler {
 	}
 
 	private function getAllCompanyData($db) {
-		$query = $db->prepare("SELECT hrs FROM teams");
+		$query = $db->prepare("SELECT * FROM teams");
 		$query->execute();
 		$result = $query->fetchAll();
 	}
