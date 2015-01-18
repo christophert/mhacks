@@ -1,0 +1,20 @@
+<div class="entries-container">
+  <table class="entries-table">
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Hours</th>
+        <th>Confirmation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($entries as $entry): ?>
+        <tr>
+          <td><?php echo $event['name'] ?></td>
+          <td><?php echo $event['hours'] ?></td>
+          <td><?php echo $event['confirm'] ?></td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
