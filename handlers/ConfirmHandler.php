@@ -1,10 +1,10 @@
 <?php
 class ConfirmHandler {
 	public function get($event) {
-		$page = "Confirm Attendees";
+		$page = "Volunteer Confirmation";
 		$workable = new DatabaseConnection();
 		$db = $workable->connect();
-		
+
 		$result = $this->getAllRSVP($event, $db);
 
 		include("../pages/elements/header.tpl.html");
