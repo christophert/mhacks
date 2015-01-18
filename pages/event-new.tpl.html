@@ -10,14 +10,8 @@
 		<label>End Date:</label> <input class="form-control" type="text" name="end" placeholder="YYYY/mm/dd HH:mm:ss" required>
 		<script type="text/javascript">
 		$(function(){
-			$('*[name=start]').appendDtpicker({
-				"inline": true,
-				"minuteInterval": 15
-			}),
-			$('*[name=end]').appendDtpicker({
-				"inline": true,
-				"minuteInterval": 15
-			});
+			$('*[name=start]').dtpicker();
+			$('*[name=end]').dtpicker();
 		});
 		</script>
 		<button class="event-submit" type="submit">Add New Event</button>
