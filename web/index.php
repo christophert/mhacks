@@ -9,7 +9,7 @@ session_start();
 
 require('../vendor/autoload.php');
 
-require('../php/func.inc');
+require('../php/database.inc');
 require('../handlers/HomeHandler.php');
 require('../handlers/LoginHandler.php');
 require('../handlers/RegisterHandler.php');
