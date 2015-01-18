@@ -18,7 +18,7 @@ class RegisterHandler {
 		include('../php/register.inc');
 		//TODO: register
 		$workable = new register();
-		$result = $workable->registerUser($_POST['fname']." ".$_POST['lname'], $_POST['email'], $_POST['password']);
+		$result = $workable->registerUser($_POST['fname']." ".$_POST['lname'], $_POST['email'], $_POST['password'], $_POST['team']);
 		$workable = null;
 		if($result)
 			header('Location: /login?regSuccess');
