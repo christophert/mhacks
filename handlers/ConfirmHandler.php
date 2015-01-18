@@ -19,15 +19,16 @@ class ConfirmHandler {
 		include("../pages/elements/footer.tpl.html");
 	}
 
-	public function post() {
+	public function post($event) {
 		if($_GET['action'] == "update") {
 			$attend = $_POST['attend'];	
 			if(!empty($attend)) {
+				$workable = new DatabaseConnection();
+				$db = $workable->connect();
 				$count = count($attend);
-				die(var_dump($_POST['attend']));
-				// for($i=0;$i < $count; $i++) {
-				// 	setConfirm($)
-				// }
+					for($i=0;$i < $count; $i++) {
+					setConfirm($attend[$i], $event, $db);
+				}
 			}
 		}
 	}
