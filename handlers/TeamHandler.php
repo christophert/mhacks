@@ -1,8 +1,12 @@
 <?php
 class TeamHandler {
 	public function get() {
-		$page = "Team";
+		$page = "Your Team";
+		$obj = new DatabaseConnection();
+		$db = $obj->connect();
 
+		$companyInfo = getCompanyInfo($db);
+		$db = NULL;
 		include('../pages/elements/header.tpl.html');
 		include('../pages/team.tpl.html');
 		include('../pages/elements/footer.tpl.html');
@@ -10,6 +14,13 @@ class TeamHandler {
 	}
 	public function post() {
 
+	}
+
+	private function getCompanyInfo($db) {
+		$query = $db->prepare("SELECT * FROM teams WHERE id=:team");
+		$query->bindParam(":team", $_SESSION['team'], PDO::PARAM_INT);
+		$query->execute();
+		return $query->fetch(PDO::FETCH_ASSOC);
 	}
 }
 ?>

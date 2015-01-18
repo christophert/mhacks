@@ -1,5 +1,5 @@
 <?php
-class NewEventHandler {
+class CreateEventHandler {
 	public function get() {
 		require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
 		if($usr_priv_level < 1) {
@@ -7,10 +7,10 @@ class NewEventHandler {
 			exit();
 		}
 
-	$page = "New Event";
-	include("../pages/elements/header.tpl.html");
-	include("../pages/event-new.tpl.html");
-	include("../pages/elements/footer.tpl.html");
+		$page = "New Event";
+		include("../pages/elements/header.tpl.html");
+		include("../pages/event-new.tpl.html");
+		include("../pages/elements/footer.tpl.html");
 	}
 
 	public function post() {
