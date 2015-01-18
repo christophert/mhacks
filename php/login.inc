@@ -45,15 +45,21 @@ class login {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
-				global $_SESSION;
-				$_SESSION['name'] = $var['name'];
-				$_SESSION['email'] = $var['email'];
-				$_SESSION['userId'] = $var['id'];
-				return true;
+				$response = array();
+				$response['status'] = "OK";
+				$response['data'] = array(
+					"name" => $var['name'],
+					"email" => $var['email'],
+					"userId" => $var['id']
+				);
+				return $response;
 			}
 		}
 		else
-			return false;
+			return $response = array(
+				"status" => "NOTFOUND",
+				"data" => array()
+				);
 	}
 
 	public function getUserInfo() { #return response or null dependent of record exist
