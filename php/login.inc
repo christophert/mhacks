@@ -56,7 +56,7 @@ class login {
 	}
 
 	public function getUserInfo() { #return response or null dependent of record exist
-		$query = $this->db->prepare(SELECT * FROM users WHERE email=:email);
+		$query = $this->db->prepare('SELECT * FROM users WHERE email=:email');
 		$query->bindParam(':email',$this->email,PDO::PARAM_STR);
 		$query->execute();
 		$response = $query->fetch(PDO::FETCH_ASSOC);
