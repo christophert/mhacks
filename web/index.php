@@ -35,4 +35,5 @@ Toro::serve(array(
   '/entries'        => 'EntriesHandler',
   '/logout'		     	=> 'LogoutHandler',
   '/userinfo'		  	=> 'UserInfoHandler',
+  '/team/leaderboard'	=>	'LeaderboardHandler',
 ));
