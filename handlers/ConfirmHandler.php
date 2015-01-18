@@ -1,6 +1,7 @@
 <?php
 class ConfirmHandler {
 	public function get($event) {
+		require($_SERVER['DOCUMENT_ROOT']."/../php/priv_level.php");
 		$page = "Volunteer Confirmation";
 		$workable = new DatabaseConnection();
 		$db = $workable->connect();
