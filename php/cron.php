@@ -16,7 +16,7 @@ foreach($teams as $team) {
   $sum_query->execute();
   $sum_raw = $sum_query->fetch(PDO::FETCH_ASSOC);
 
-  if(iset($sum_raw['aggregate']) {
+  if(iset($sum_raw['aggregate'])) {
     //Save the total to the table
     $sum = $sum_raw['aggregate'];
     $query = $db->prepare("UPDATE `teams` SET `hrs`=:sum WHERE `id`=:tid");
