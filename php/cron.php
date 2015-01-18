@@ -1,6 +1,6 @@
 <?php
 
-require($_SERVER['DOCUMENT_ROOT']."/../../dbcreds.inc");
+require("../../dbcreds.inc");
 require('database.inc');
 
 // Get all teams
