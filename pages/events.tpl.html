@@ -4,25 +4,21 @@
       <tr>
         <th>Name</th>
         <th>City</th>
+        <th>State</th>
         <th>Start</th>
         <th>End</th>
       </tr>
     </thead>
     <tbody>
+      <?php foreach($events as $event): ?>
       <tr>
-        <td>
-          UNYTS Blood Drive
-        </td>
-        <td>
-          Niagara Falls
-        </td>
-        <td>
-          1/12/2015 9:00AM
-        </td>
-        <td>
-          1/12/2015 5:00PM
-        </td>
+        <td><?php echo $event['name'] ?></td>
+        <td><?php echo $event['city'] ?></td>
+        <td><?php echo $event['state'] ?></td>
+        <td><?php echo $event['start'] ?></td>
+        <td><?php echo $event['end'] ?></td>
       </tr>
+      <?php endforeach; ?>
     </tbody>
   </table>
 </div>

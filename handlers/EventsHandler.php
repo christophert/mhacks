@@ -6,7 +6,8 @@ class EventsHandler
 
     $dbObj = new DatabaseConnection(true);
     $db = $dbObj->connect();
-    $this->getEvents($db);
+
+    $events = $this->getEvents($db);
 
     include("../pages/elements/header.tpl.html");
     include("../pages/events.tpl.html");
@@ -16,7 +17,6 @@ class EventsHandler
   private function getEvents($db) {
     $query = $db->prepare("SELECT `name`, `city`, `state`, `start`, `end` FROM `events`");
     $query->execute();
-    $response = $query->fetchAll(PDO::FETCH_ASSOC);
-    die(var_dump($response));
+    return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 }
