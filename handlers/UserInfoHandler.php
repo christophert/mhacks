@@ -9,6 +9,7 @@ class UserInfoHandler
 
     $teams = $this->getTeams($db);
     $userData = $this->getUserData($db);
+    $teamStatus = $this->getTeamVerifyStatus($db);
 
     include("../pages/elements/header.tpl.html");
     include("../pages/user-info.tpl.html");
@@ -42,9 +43,19 @@ class UserInfoHandler
   }
 
   private function getUserData($db) {
-    $query = $db->prepare("SELECT `name`, `email`, `total_hrs`, `team` FROM `users` WHERE `id`=:id");
+    $query = $db->prepare("SELECT `total_hrs`, `team` FROM `users` WHERE `id`=:id");
     $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_INT);
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);
+  }
+
+  private function getTeamVerifyStatus($db) {
+    $query = $db->prepare("SELECT trusted_domain FROM teams WHERE id=:teamId");
+    $query->bindParam(":teamId", $_SESSION['team'], PDO::PARAM_INT);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $trustedDomain = $result['trusted_domain'];
+    $emailDomain = substr($_SESSION['email'], strpos($_SESSION['email'], '@')+1);
+    return ($trustedDomain === $emailDomain);
   }
 }

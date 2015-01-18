@@ -50,7 +50,8 @@ class login {
 				$response['data'] = array(
 					"name" => $var['name'],
 					"email" => $var['email'],
-					"userId" => $var['id']
+					"userId" => $var['id'],
+					"team" => $var['team']
 				);
 				return $response;
 			}

@@ -17,6 +17,7 @@ class LoginHandler
     	$_SESSION['userId'] = $response['data']['userId'];
     	$_SESSION['name'] = $response['data']['name'];
     	$_SESSION['email'] = $response['data']['email'];
+    	$_SESSION['team'] = $response['data']['team'];
     	session_write_close();
     	header('Location: /');
     }
