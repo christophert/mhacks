@@ -26,4 +26,5 @@ Toro::serve(array(
   '/events/:number' => 'EventsDetailHandler',
   '/events'         => 'EventsHandler',
   '/entries'        => 'EntriesHandler',
+  '/logout'			=> 'LogoutHandler',
 ));
