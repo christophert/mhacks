@@ -15,7 +15,6 @@ class TeamHandler {
 		$hourCompanies = $this->getHourCompanies($db);
 		$avghrsCompanies = $this->getAvgHourCompanies($db);
 
-		$db = NULL;
 		include('../pages/elements/header.tpl.html');
 		include('../pages/team.tpl.html');
 		include('../pages/elements/footer.tpl.html');
