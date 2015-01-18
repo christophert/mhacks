@@ -3,7 +3,7 @@
 	session_start();
 	
 	//Check whether the session variable SESS_ID is present or not
-	if(!$_SERVER['REQUEST_URI'] contains "login") {
+	if(!strpos($_SERVER['REQUEST_URI'],"login")) {
 		if(!isset($_SESSION['userId']) || (trim($_SESSION['userId']) == '')) 
 		{
 			$errMsg_arr[] = 'Access Denied - Please login';
