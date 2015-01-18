@@ -8,7 +8,7 @@ class UserInfoHandler
     $db = $dbObj->connect();
 
     $teams = $this->getTeams($db);
-    $userData = $this->getUserData($db)['total_hrs'];
+    $userData = $this->getUserData($db);
 
     include("../pages/elements/header.tpl.html");
     include("../pages/user-info.tpl.html");
