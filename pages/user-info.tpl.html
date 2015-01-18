@@ -2,7 +2,7 @@
   <div class="detail-info">
     <a class="list-group-item">
       <h4 class="list-group-item-heading">Hours Volunteered</h4>
-      <p class="list-group-item-text"><?php echo $hours ?></p>
+      <p class="list-group-item-text"><?php echo $userData['total_hrs']; ?></p>
     </a>
     <a class="list-group-item">
       <h4 class="list-group-item-heading">Team</h4>
@@ -10,7 +10,11 @@
         <select class="form-control" name="team">
           <?php
           foreach($teams as $team) {
-            echo "<option value=\"" . $team['id'] . "\">" . $team['name'] . "</option>";
+            $extra = "";
+            if($team['id'] == $userData['team']) {
+              $extra = " activated"
+            }
+            echo "<option value=\"" . $team['id'] . "\" . $extra . ">" . $team['name'] . "</option>";
           }
           ?>
         </select>

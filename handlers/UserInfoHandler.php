@@ -8,7 +8,7 @@ class UserInfoHandler
     $db = $dbObj->connect();
 
     $teams = $this->getTeams($db);
-    $hours = $this->getHours($db)['total_hrs'];
+    $userData = $this->getUserData($db)['total_hrs'];
 
     include("../pages/elements/header.tpl.html");
     include("../pages/user-info.tpl.html");
@@ -40,8 +40,8 @@ class UserInfoHandler
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  private function getHours($db) {
-    $query = $db->prepare("SELECT `total_hrs` FROM `users` WHERE `id`=:id");
+  private function getUserData($db) {
+    $query = $db->prepare("SELECT `total_hrs`, `team` FROM `users` WHERE `id`=:id");
     $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);
