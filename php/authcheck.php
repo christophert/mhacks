@@ -8,7 +8,7 @@
 		{
 			$errMsg_arr[] = 'Access Denied - Please login';
 			$_SESSION['ERRMSG_ARR'] = $errMsg_arr;
-			header("location: admin_error.php");
+			header("location: /?gone");
 			exit();
 		}
 	}
