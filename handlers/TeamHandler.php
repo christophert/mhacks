@@ -35,6 +35,7 @@ class TeamHandler {
 		$query = $db->prepare("SELECT name FROM teams");
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+		$result = array_filter($result, 'strlen');
 		return $result;
 	}
 
@@ -42,6 +43,7 @@ class TeamHandler {
 		$query = $db->prepare("SELECT hrs FROM teams");
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+		$result = array_filter($result, 'strlen');
 		return $result;
 	}
 
@@ -49,6 +51,7 @@ class TeamHandler {
 		$query = $db->prepare("SELECT avghrs FROM teams");
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+		$result = array_filter($result, 'strlen');
 		return $result;
 	}
 }
