@@ -31,8 +31,8 @@ class UserInfoHandler
   }
 
   private function getHours($db) {
-    $query = $db->prepare("SELECT `total_hrs` FROM `users` WHERE `uid`=:uid");
-    $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
+    $query = $db->prepare("SELECT `total_hrs` FROM `users` WHERE `id`=:id");
+    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetch(PDO::FETCH_ASSOC);
   }
