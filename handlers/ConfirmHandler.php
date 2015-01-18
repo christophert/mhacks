@@ -43,7 +43,7 @@ class ConfirmHandler {
 	}
 
 	public function setConfirm($uid, $event, $db) {
-		$query = $db->prepare("UPDATE entries SET confirm=1 WHERE id=:uid AND event=:event");
+		$query = $db->prepare("UPDATE entries SET confirm=1 WHERE uid=:uid AND event=:event");
 		$query->bindParam(':uid', $uid, PDO::PARAM_INT);
 		$query->bindParam(':event', $event, PDO::PARAM_INT);
 		return $query->execute();
