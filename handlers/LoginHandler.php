@@ -14,6 +14,7 @@ class LoginHandler
     $workable->setId($_POST['email']);
     $response = $workable->precheckUser($_POST['password']);
     if($response['status'] == "OK") {
+    	global $_SESSION;
     	$_SESSION['userId'] = $response['data']['userId'];
     	$_SESSION['name'] = $response['data']['name'];
     	$_SESSION['email'] = $response['data']['email'];
