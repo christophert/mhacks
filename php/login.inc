@@ -36,8 +36,6 @@ class login {
 	private function validateLogin($pass, $hashed_pass, $created_date, $hash_method = 'sha256') {
 		$salt = strrev(date('U', $created_date));
 		if (function_exists('hash') && in_array($hash_method, hash_algos())) {
-			die($hashed_pass);
-			die(hash($hash_method, $salt . $pass));
 			return ($hashed_pass === hash($hash_method, $salt . $pass));
 		}
 		return ($hashed_pass === sha1($salt . $pass));
