@@ -13,7 +13,7 @@ class ConfirmHandler {
 	}
 
 	public function post() {
-		if($_POST['action'] == "update") {	
+		if($_GET['action'] == "update") {	
 			include("../php/database.inc");
 			$workable = new DatabaseConnection();
 			$db = $workable->connect();
