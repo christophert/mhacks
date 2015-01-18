@@ -5,7 +5,7 @@ class TeamHandler {
 		$obj = new DatabaseConnection();
 		$db = $obj->connect();
 
-		$companyInfo = getCompanyInfo($db);
+		$companyInfo = $this->getCompanyInfo($db);
 		$db = NULL;
 		include('../pages/elements/header.tpl.html');
 		include('../pages/team.tpl.html');
