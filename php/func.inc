@@ -1,6 +1,5 @@
 <?php
-class dbInit {
-  private 
+class dbInit { 
   function __construct($connect = true) {
     $this->results = array();
     $this->dbHost = "100.72.88.112";
