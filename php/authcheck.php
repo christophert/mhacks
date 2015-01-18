@@ -6,6 +6,7 @@
 		session_start();
 		if(!isset($_SESSION['userId'])) 
 		{
+			die(var_dump($_SESSION));
 			$errMsg_arr[] = 'Access Denied - Please login';
 			$_SESSION['ERRMSG_ARR'] = $errMsg_arr;
 			header("location: /login");
