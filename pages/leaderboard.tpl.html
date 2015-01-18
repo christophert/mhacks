@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="leaderboard-wrapper">
+		<table class="leaderboard">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Average Hours <small>per employee</small></th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php
+				$counter = 1;
+				foreach($leaderboardData as $entry) {
+			?>
+					<tr><td><?php echo $counter; ?></td><td><?php echo $entry['name']; ?></td><td><?php echo $entry['avghrs']; ?></td></tr>
+			<?php
+					counter++;
+				}
+			?>
+			</tbody>
+		</table>
+	</div>
+</div>
