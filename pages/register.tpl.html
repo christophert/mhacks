@@ -7,7 +7,7 @@
 		<label>Password:</label> <input type="password" name="password" class="form-control" placeholder="password" required>
 		<label>Join a Team (optional):</label>
 		<select name="team" class="form-control">
-			<option value="">No Team</option>
+			<option value="" selected="selected">No Team</option>
 			<?php foreach($result as $option) {
 			?>
 				<option value="<?php echo $option['id']; ?>"><?php echo $option['name']; ?></option>
