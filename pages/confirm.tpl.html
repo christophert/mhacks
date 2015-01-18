@@ -3,7 +3,7 @@
 		<?php
 		foreach($response as &$value) {
 		?>
-		<li class="list-group-item">$value['name'] <span class="badge"><input type="radio" /></span></li>
+		<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="radio" aria-label="<?php echo $value['id']; ?>/></span></li>
 		<?php
 		}
 		?>
