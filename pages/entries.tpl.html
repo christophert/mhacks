@@ -12,8 +12,10 @@
         <tr>
           <td><?php echo $entry['name'] ?></td>
           <td><?php echo $entry['hrs'] ?></td>
-          <td><img src="/assets/images/
-          <?php $confirmStatus = $entry['confirm'];
+          <td><img src=
+          <?php
+            echo "\"/assets/images/";
+            $confirmStatus = $entry['confirm'];
             if(!isset($confirmStatus)) {
               echo "check-unknown.png";
             } else if($confirmStatus == 0) {
@@ -21,6 +23,7 @@
             } else {
               echo "check-green.png";
             }
+            echo "\"";
           ?>" />
           </td>
         </tr>
