@@ -19,6 +19,6 @@ Toro::serve(array(
   '/'               => 'HomeHandler',
   '/login'          => 'LoginHandler',
   '/register'       => 'RegisterHandler',
+  '/events/:number' => 'EventsDetailHandler',
   '/events'         => 'EventsHandler',
-  '/events/:number' => 'EventsHandler',
 ));
