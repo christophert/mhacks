@@ -1,2 +1,10 @@
 <div class="container">
+	<ul class="list-group">
+		<?php
+		foreach($response as &$value) {
+		?>
+		<li class="list-group-item">$value['name'] <span class="badge"><input type="radio" /></span></li>
+		<?php
+		}
+		?>
 </div>
