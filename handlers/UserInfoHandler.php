@@ -15,9 +15,15 @@ class UserInfoHandler
   }
 
   private function getTeams($db) {
-    $query = $db->prepare("SELECT entries.hrs, entries.confirm, events.name FROM `entries` INNER JOIN `events` on entries.event = events.id WHERE `uid`=:uid");
-    $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
+    $query = $db->prepare("SELECT `id`, `name` FROM `teams`");
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  private function getHours() {
+    $query = $db->prepare("SELECT `total_hrs` FROM `users` WHERE `uid`=:uid");
+    $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
   }
 }
