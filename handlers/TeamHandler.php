@@ -34,21 +34,21 @@ class TeamHandler {
 	private function getNameCompanies($db) {
 		$query = $db->prepare("SELECT name FROM teams");
 		$query->execute();
-		$result = $query->fetchAll();
+		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 		return $result;
 	}
 
 	private function getHourCompanies($db) {
 		$query = $db->prepare("SELECT hrs FROM teams");
 		$query->execute();
-		$result = $query->fetchAll();
+		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 		return $result;
 	}
 
 	private function getAvgHourCompanies($db) {
 		$query = $db->prepare("SELECT avghrs FROM teams");
 		$query->execute();
-		$result = $query->fetchAll();
+		$result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
 		return $result;
 	}
 }
