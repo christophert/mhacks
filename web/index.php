@@ -18,7 +18,7 @@ require('../handlers/RegisterHandler.php');
 require('../handlers/EventsHandler.php');
 require('../handlers/EventsDetailHandler.php');
 require('../handlers/EntriesHandler.php');
-
+require('../handlers/LogoutHandler.php');
 Toro::serve(array(
   '/'               => 'HomeHandler',
   '/login'          => 'LoginHandler',
