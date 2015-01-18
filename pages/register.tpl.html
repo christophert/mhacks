@@ -6,7 +6,7 @@
 		<label>E-Mail:</label> <input type="email" name="email" class="form-control" placeholder="john@smith.com" required>
 		<label>Password:</label> <input type="password" name="password" class="form-control" placeholder="password" required>
 		<label>Join a Team (optional):</label>
-		<select>
+		<select name="team" class="form-control">
 			<?php foreach($result as $option) {
 			?>
 				<option value="<?php echo $option['id']; ?>"><?php echo $option['name']; ?></option>
