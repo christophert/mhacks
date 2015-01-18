@@ -16,7 +16,7 @@ class LeaderboardHandler {
 	public function post() {}
 
 	private function getLeaderboard($db) {
-		$query = $db->prepare("SELECT name, avghrs FROM teams ORDER BY avghrs");
+		$query = $db->prepare("SELECT name, avghrs FROM teams ORDER BY avghrs DESC");
 		$query->execute();
 		return $query->fetchAll();
 	}
