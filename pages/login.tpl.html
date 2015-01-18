@@ -8,6 +8,6 @@
 		<?php if(!empty($_GET['redir'])) { ?><input type="hidden" name="redir" value="<?php echo $_GET['redir']; ?>" /> <?php } ?>
 		<button class="login-submit" type="submit">Login</button>
 		<a class="register-button" type="button" href="/register">Register</a>
-		<p><?php echo $_SERVER['REQUEST_URI']; ?></p>
+		<p><?php echo $_SERVER['REQUEST_URI']; echo (true == strpos($_SERVER['REQUEST_URI'],"login")); ?></p>
 	</form>
 </div>
