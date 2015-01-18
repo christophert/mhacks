@@ -14,11 +14,12 @@ require('../handlers/HomeHandler.php');
 require('../handlers/LoginHandler.php');
 require('../handlers/RegisterHandler.php');
 require('../handlers/EventsHandler.php');
+require('../handlers/EventsDetailHandler.php');
 
 Toro::serve(array(
   '/'               => 'HomeHandler',
   '/login'          => 'LoginHandler',
   '/register'       => 'RegisterHandler',
+  '/events/:number' => 'EventsDetailHandler',
   '/events'         => 'EventsHandler',
-  '/events/:number' => 'EventsHandler',
 ));
