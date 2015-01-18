@@ -12,7 +12,17 @@
         <tr>
           <td><?php echo $entry['name'] ?></td>
           <td><?php echo $entry['hrs'] ?></td>
-          <td><?php echo $entry['confirm'] ?></td>
+          <td><img src="/assets/images/
+          <?php $confirmStatus = $entry['confirm'];
+            if(!isset($confirmStatus)) {
+              echo "check-unknown.png";
+            } else if($confirmStatus == 0) {
+              echo "check-red.png";
+            } else {
+              echo "check-green.png";
+            }
+          ?>" />
+          </td>
         </tr>
       <?php endforeach; ?>
     </tbody>
