@@ -37,3 +37,4 @@ class NewEventHandler {
 		return $query->execute();
 	}
 }
+?>

@@ -32,3 +32,4 @@ class RegisterHandler {
 	  	return $query->fetchAll();
   	}
 }
+?>

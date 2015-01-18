@@ -60,3 +60,5 @@ class UserInfoHandler
     return $emailDomain == $trustedDomain;
   }
 }
+
+?>
