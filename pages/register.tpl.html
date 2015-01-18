@@ -5,6 +5,13 @@
 		<label>Last Name:</label> <input type="text" name="lname" class="form-control" placeholder="Smith" required>
 		<label>E-Mail:</label> <input type="email" name="email" class="form-control" placeholder="john@smith.com" required>
 		<label>Password:</label> <input type="password" name="password" class="form-control" placeholder="password" required>
+		<label>Join a Team (optional):</label>
+		<select>
+			<?php foreach($result as $option) {
+			?>
+				<option value="<?php echo $option['id']; ?>"><?php echo $option['name']; ?></option>
+			<?php } ?>
+		</select>
 		<button class="register-button" type="submit">Register</button>
 	</form>
 </div>

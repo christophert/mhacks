@@ -2,6 +2,11 @@
 class RegisterHandler {
 	public function get() {
 		$page = "Register";
+		$obj = new DatabaseConnection();
+		$db = $obj->connect();
+
+		$result = getTeams($db);
+		
 		include("../pages/elements/header.tpl.html");
 		include("../pages/register.tpl.html");
 		include("../pages/elements/footer.tpl.html");
@@ -17,4 +22,10 @@ class RegisterHandler {
 		else
 			header('Location: /register?failure');
 	}
+
+	public function getTeams($db) {
+	  	$query = $db->prepare("SELECT * FROM teams");
+	  	$query->execute();
+	  	return $query->fetchAll();
+  	}
 }
