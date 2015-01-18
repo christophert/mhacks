@@ -2,7 +2,6 @@
 class EntriesHandler
 {
   public function get() {
-    // die(var_dump($_SESSION));
     $page = "Entries";
 
     $dbObj = new DatabaseConnection();
