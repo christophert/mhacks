@@ -16,12 +16,22 @@ class UserInfoHandler
   }
 
   public function post() {
-    die(var_dump($_POST));
+    if(isset($_POST['team'])) {
+      $team = $_POST['team'];
+      if(is_numeric($team)) {
+        $dbObj = new DatabaseConnection();
+        $db = $dbObj->connect();
+        $this->saveTeam($db, $team);
+      }
+    }
     header('Location: /userinfo');
   }
 
   private function saveTeam($db, $tid) {
-
+    $query = $db->prepare("UPDATE `users` SET `team`=:tid WHERE `id`=:id");
+    $query->bindParam(':tid', $tid, PDO::PARAM_STR);
+    $query->bindParam(':id', $_SESSION['userId'], PDO::PARAM_STR);
+    $query->execute();
   }
 
   private function getTeams($db) {
