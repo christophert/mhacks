@@ -7,6 +7,7 @@ require($_SERVER['DOCUMENT_ROOT']."/../../dbcreds.inc");
 //####################################################################
 //die("Strive is currently undergoing maintenance and will be back up soon.");
 date_default_timezone_set('America/New_York');
+session_start();
 
 require('../vendor/autoload.php');
 
