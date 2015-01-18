@@ -1,21 +1,21 @@
 <?php
 class EventsHandler
 {
-  public function get() {
-    $page = "Events";
-
-    $dbObj = new DatabaseConnection(true);
-    $db = $dbObj->connect();
-
-    $events = $this->getEvents($db);
-
-    include("../pages/elements/header.tpl.html");
-    include("../pages/events.tpl.html");
-    include("../pages/elements/footer.tpl.html");
-  }
-
   public function get($id) {
-    die("get here");
+    if(isset($id)) {
+      die("get here");
+    } else {
+      $page = "Events";
+
+      $dbObj = new DatabaseConnection(true);
+      $db = $dbObj->connect();
+
+      $events = $this->getEvents($db);
+
+      include("../pages/elements/header.tpl.html");
+      include("../pages/events.tpl.html");
+      include("../pages/elements/footer.tpl.html");
+    }
   }
 
   private function getEvents($db) {
