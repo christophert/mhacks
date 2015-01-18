@@ -41,10 +41,11 @@ class login {
 		return ($hashed_pass === sha1($salt . $pass));
 	}
 
-	function precheckUser($email, $password) {
+	function precheckUser($password) {
 		$var = $this->getUserInfo();
 		if($var != null) {
 			if($this->validateLogin($password, $var['password'], $var['created_dt'])) {
+				var_dump($response);
 				$_SESSION['name'] = $reponse['name'];
 				$_SESSION['email'] = $response['email'];
 				$_SESSION['userId'] = $response['id'];

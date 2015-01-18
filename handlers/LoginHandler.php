@@ -12,7 +12,7 @@ class LoginHandler
   	include("../php/login.inc");
     $workable = new login();
     $workable->setId($_POST['email']);
-    if($workable->precheckUser($_POST['email'], $_POST['password']))
+    if($workable->precheckUser($_POST['password']))
     	header('Location: /');
     else
     	header('Location: /login?failure');
