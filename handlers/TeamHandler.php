@@ -11,8 +11,10 @@ class TeamHandler {
 		$db = $obj->connect();
 
 		$companyInfo = $this->getCompanyInfo($db);
-		$allCompanies = $this->getAllCompanyData($db);
-		
+		$nameCompanies = $this->getNameCompanies($db);
+		$hourCompanies = $this->getHourCompanies($db);
+		$avghrsCompanies = $this->getAvgHourCompanies($db);
+
 		$db = NULL;
 		include('../pages/elements/header.tpl.html');
 		include('../pages/team.tpl.html');
@@ -30,8 +32,20 @@ class TeamHandler {
 		return $query->fetch(PDO::FETCH_ASSOC);
 	}
 
-	private function getAllCompanyData($db) {
-		$query = $db->prepare("SELECT * FROM teams");
+	private function getNameCompanies($db) {
+		$query = $db->prepare("SELECT name FROM teams");
+		$query->execute();
+		$result = $query->fetchAll();
+	}
+
+	private function getHourCompanies($db) {
+		$query = $db->prepare("SELECT hrs FROM teams");
+		$query->execute();
+		$result = $query->fetchAll();
+	}
+
+	private function getAvgHourCompanies($db) {
+		$query = $db->prepare("SELECT avghrs FROM teams");
 		$query->execute();
 		$result = $query->fetchAll();
 	}
