@@ -4,11 +4,9 @@ class ConfirmHandler {
 		$page = "Confirm Attendees";
 		$workable = new DatabaseConnection();
 		$db = $workable->connect();
-		$query = $db->prepare("SELECT u.id,u.name FROM users AS u INNER JOIN rsvp AS rs on u.id=rs.uid AND rs.event = :event");
-		$query->bindParam(':event', $event)
-		$query->execute();
-		$result = $query->fetchAll();
-		var_dump($result);
+		
+		$result = $this->getAllRSVP($event, $db);
+
 		include("../pages/elements/header.tpl.html");
 		include("../pages/confirm.tpl.html");
 		include("../pages/elements/footer.tpl.html");
@@ -21,5 +19,13 @@ class ConfirmHandler {
 			$db = $workable->connect();
 			$query = $db->prepare("UPDATE entries SET confirm=1 WHERE id=:uid AND event=:event");
 		}
+	}
+
+	public function getAllRSVP($event, $db) {
+		$query = $db->prepare("SELECT u.id,u.name FROM users AS u INNER JOIN rsvp AS rs on u.id=rs.uid AND rs.event = :event");
+		$query->bindParam(':event', $event, PDO::PARAM_INT);
+		$query->execute();
+		$result = $query->fetchAll();
+		return $result;
 	}
 }

@@ -26,9 +26,9 @@ Toro::serve(array(
   '/login'          => 'LoginHandler',
   '/register'       => 'RegisterHandler',
   '/events/:number' => 'EventsDetailHandler',
+  '/events/:number/confirm' => 'ConfirmHandler',
   '/events'         => 'EventsHandler',
   '/entries'        => 'EntriesHandler',
   '/logout'		     	=> 'LogoutHandler',
   '/userinfo'		  	=> 'UserInfoHandler',
-  '/confirm'		=>	'ConfirmHandler',
 ));
