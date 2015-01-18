@@ -15,9 +15,8 @@ class EntriesHandler
   }
 
   private function getEntries($db) {
-    $chriswaiting = 1;
     $query = $db->prepare("SELECT entries.hrs, entries.confirm, events.name FROM `entries` INNER JOIN `events` on entries.event = events.id WHERE `uid`=:uid");
-    $query->bindParam(':uid', $chriswaiting, PDO::PARAM_STR);
+    $query->bindParam(':uid', $_SESSION['userId'], PDO::PARAM_STR);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_ASSOC);
   }
