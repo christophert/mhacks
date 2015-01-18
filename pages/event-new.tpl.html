@@ -9,10 +9,9 @@
 		<label>Start Date:</label> <input class="form-control" type="text" name="start" placeholder="YYYY/mm/dd HH:mm:ss" required>
 		<label>End Date:</label> <input class="form-control" type="text" name="end" placeholder="YYYY/mm/dd HH:mm:ss" required>
 		<script type="text/javascript">
-		$(function(){
-			$('*[name=start]').dtpicker();
-			$('*[name=end]').dtpicker();
-		});
+			$('*[name=start], *[name=end]').datetimepicker({
+				format: 'yyyy/mm/dd hh:ii:00'
+			});
 		</script>
 		<button class="event-submit" type="submit">Add New Event</button>
 	</form>
