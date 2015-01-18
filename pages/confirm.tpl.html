@@ -4,7 +4,7 @@
 			<?php
 			foreach($result as $value) {
 			?>
-			<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="checkbox" aria-label="<?php echo $value['id']; ?>"/></span></li>
+			<li class="list-group-item"><?php echo $value['name']; ?><span class="badge"><input type="checkbox" aria-label="Mark for Confirmation" name="<?php echo $value['id']; ?>" /></span></li>
 			<?php
 			}
 			?>
