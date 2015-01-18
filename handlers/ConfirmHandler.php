@@ -20,8 +20,15 @@ class ConfirmHandler {
 	}
 
 	public function post() {
-		if($_GET['action'] == "update") {	
-			//if(setConfirm($_POST['']))
+		if($_GET['action'] == "update") {
+			$attend = $_POST['attend'];	
+			if(!empty($attend)) {
+				$count = count($attend);
+				die(var_dump($_POST['attend']));
+				// for($i=0;$i < $count; $i++) {
+				// 	setConfirm($)
+				// }
+			}
 		}
 	}
 
@@ -33,8 +40,9 @@ class ConfirmHandler {
 		return $result;
 	}
 
-	public function setConfirm($array, $db) {
+	public function setConfirm($uid, $event, $db) {
 		$query = $db->prepare("UPDATE entries SET confirm=1 WHERE id=:uid AND event=:event");
+		$query->bindParam(':uid', $uid, PDO::PARAM_INT);
 		$query->bindParam(':event', $event, PDO::PARAM_INT);
 		return $query->execute();
 	}
