@@ -71,11 +71,12 @@ class login {
 */
 	public function getUserInfo() { #return response or null dependent of record exist
 		$query = "SELECT * FROM users WHERE email='$email'";
-		$result=mysql_query($query)
+		$result=mysql_query($query);
 		if($result){
 			if(mysql_num_rows($result)==1){
 				echo('Sucess!')
 			}
 		}
+	}
 }
 ?>
