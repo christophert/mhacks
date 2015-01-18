@@ -1,6 +1,6 @@
 <?php
 session_save_path("/tmp/session");
-//session_start();
+session_start();
 //require($_SERVER['DOCUMENT_ROOT']."/../php/authcheck.php");
 require($_SERVER['DOCUMENT_ROOT']."/../../dbcreds.inc");
 //####################################################################
