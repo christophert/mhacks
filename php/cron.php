@@ -13,19 +13,31 @@ $teams = $teams_query->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($teams as $team) {
   // Get the total sum of hours for that team
-  $tid = $team['id'];
+  $tid = $team['id'];  
   $sum_query = $db->prepare("SELECT SUM(`total_hrs`) AS aggregate FROM `users` WHERE `team`=:tid");
-  $query->bindParam(':tid', $tid, PDO::PARAM_STR);
+  $sum_query->bindParam(':tid', $tid, PDO::PARAM_STR);
   $sum_query->execute();
   $sum_raw = $sum_query->fetch(PDO::FETCH_ASSOC);
 
   if(isset($sum_raw['aggregate'])) {
-    //Save the total to the table
     $sum = $sum_raw['aggregate'];
-    $query = $db->prepare("UPDATE `teams` SET `hrs`=:sum WHERE `id`=:tid");
-    $query->bindParam(':sum', $sum, PDO::PARAM_STR);
-    $query->bindParam(':tid', $tid, PDO::PARAM_STR);
-    $query->execute();
+
+    // Calculate number of employees in team
+    $users_query = $db->prepare("SELECT COUNT(`id`) AS count FROM `users` WHERE `team`=:tid");
+    $users_query->bindParam(':tid', $tid, PDO::PARAM_STR);
+    $users_query->execute();
+    $count_raw = $users_query->fetch(PDO::FETCH_ASSOC);
+
+    if(isset($count_raw['count'])) {
+      $count = $count_raw['count'];
+      $average = $sum / $count;
+
+      $save_query = $db->prepare("UPDATE `teams` SET `hrs`=:sum, `avghrs`=:avg WHERE `id`=:tid");
+      $save_query->bindParam(':sum', $sum, PDO::PARAM_STR);
+      $save_query->bindParam(':avg', $average, PDO::PARAM_STR);
+      $save_query->bindParam(':tid', $tid, PDO::PARAM_STR);
+      $save_query->execute();
+    }
   }
 }
 ?>
