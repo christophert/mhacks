@@ -14,10 +14,7 @@ class ConfirmHandler {
 
 	public function post() {
 		if($_GET['action'] == "update") {	
-			include("../php/database.inc");
-			$workable = new DatabaseConnection();
-			$db = $workable->connect();
-			$query = $db->prepare("UPDATE entries SET confirm=1 WHERE id=:uid AND event=:event");
+			if(setConfirm($_POST['']))
 		}
 	}
 
@@ -27,5 +24,11 @@ class ConfirmHandler {
 		$query->execute();
 		$result = $query->fetchAll();
 		return $result;
+	}
+
+	public function setConfirm($array, $db) {
+		$query = $db->prepare("UPDATE entries SET confirm=1 WHERE id=:uid AND event=:event");
+		$query->bindParam(':event', $event, PDO::PARAM_INT);
+		return $query->execute();
 	}
 }

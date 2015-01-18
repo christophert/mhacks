@@ -1,4 +1,5 @@
 <div class="container">
+	<?php if(count($result) > 0) { ?>
 	<form class="confirm-form" role="form" method="post" action="?action=update">
 		<div class="page-heading"><h1>Volunteer Confirmation</h1></div>
 		<ul class="group">
@@ -12,4 +13,7 @@
 			<button class="confirm-attend-button" type="submit">Confirm Selected</button>
 		</ul>
 	</form>
+	<?php } else { ?>
+	<div class="page-heading"><h1>No volunteers... :(</h1></div>
+	<?php } ?>
 </div>
