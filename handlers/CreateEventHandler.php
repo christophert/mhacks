@@ -17,7 +17,7 @@ class CreateEventHandler {
 		$obj = new DatabaseConnection();
 		$db = $obj->connect();
 		if($this->registerEvent($_POST['name'],$_POST['addr'],$_POST['city'],$_POST['state'],$_POST['zip'],$_POST['start'],$_POST['end'],$db)) {
-			header("Location: /done_with_things");
+			header("Location: /events");
 		} else {
 			header("Location: /maybenot");
 		}
